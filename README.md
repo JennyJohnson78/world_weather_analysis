@@ -6,14 +6,26 @@ APIs, or an Application Programming Interface, is a software intermediary that a
 ## Results
 
 ![image](https://user-images.githubusercontent.com/67409852/139557648-a66628f2-4484-4748-b027-1e6a19b6b876.png)
-- First, an API call is made to gather weather data
+- First, an API call is made to gather weather data using the URL below
+```
+# Starting URL for Weather Map API Call.
+url = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&APPID=92eb438c0120869d3296ae56bfb217e4"
+```
+
 - Next, the weather data is added to a DataFrame
 
-```weather_data_df = pd.DataFrame("")
+```
+# Convert the array of dictionaries to a Pandas DataFrame.
+city_data_df = pd.DataFrame(city_data)
+city_data_df.head(10)
 ```
 
 - Then, this data is exported as a CSV file
-```weather_data_df.to_csv("")
+```
+# Create the output file (CSV).
+output_data_file = "WeatherPy_Database.csv"
+# Export the City_Data into a CSV.
+city_data_df.to_csv(output_data_file, index_label="City_ID")
 ```
 
 ## Summary
