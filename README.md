@@ -80,4 +80,18 @@ fig.add_layer(markers)
 
 ### Create Travel Itinerary Map
 
+- Enable the "Directions API" in the Google account for the API key
+
+- Refractor code for the markup layer map
+
+- Then, use the loc method to create separate DataFrames for 4 cities within the temperature range
+
+- Use Pandas to_numpy function and list indexing to retrieve the latitude-longitude pairs as tuples from each city DataFrame
+
+- Utilizing gmaps documentation, create a directions layer map using the variables
+
+- Use the concat() function to combine the 4 city DataFrames
+
+- Finally, refractor map code to create the travel itinerary map
+
 ![image](https://user-images.githubusercontent.com/67409852/139613419-9245e88e-5172-4457-9991-22b2610b6f7d.png)
