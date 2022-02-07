@@ -5,6 +5,8 @@ APIs, or an Application Programming Interface, is a software intermediary that a
 
 ## Results
 
+### API Call
+
 - First, an API call is made to gather weather data using the URL below
 ```
 # Starting URL for Weather Map API Call.
@@ -29,18 +31,23 @@ city_data_df.to_csv(output_data_file, index_label="City_ID")
 
 ![image](https://user-images.githubusercontent.com/67409852/139557648-a66628f2-4484-4748-b027-1e6a19b6b876.png)
 
+### Create Markup Layer Map
+
+- Write two input statements that prompt the user to enter their minimum and maximum temperature criteria for their vacation
+
+- Next, use the loc method to to filter the DataFrame for that temperature criteria
+
+- Iterate through the hotels DataFrame and retrieve their latitude and longitude and add this to a new DataFrame
+
+- Then, add the city name, the country code, the weather description, and the maximum temperature for the city
+
+- Refactor the previous marker layer map code to create a marker layer map that will have pop-up markers for each city on the map
+
 
 ```
 ```
 
 ![image](https://user-images.githubusercontent.com/67409852/139627528-fb7cfb8d-fea1-40c0-bf3c-e11ca8e8ad75.png)
 
-## Summary
-
-
-
-
-
-![image](https://user-images.githubusercontent.com/67409852/139627528-fb7cfb8d-fea1-40c0-bf3c-e11ca8e8ad75.png)
 
 ![image](https://user-images.githubusercontent.com/67409852/139613419-9245e88e-5172-4457-9991-22b2610b6f7d.png)
