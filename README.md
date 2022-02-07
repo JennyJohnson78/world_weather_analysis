@@ -78,4 +78,6 @@ fig.add_layer(markers)
 ![image](https://user-images.githubusercontent.com/67409852/139627528-fb7cfb8d-fea1-40c0-bf3c-e11ca8e8ad75.png)
 
 
+### Create Travel Itinerary Map
+
 ![image](https://user-images.githubusercontent.com/67409852/139613419-9245e88e-5172-4457-9991-22b2610b6f7d.png)
