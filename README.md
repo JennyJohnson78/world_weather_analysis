@@ -5,12 +5,22 @@ APIs, or an Application Programming Interface, is a software intermediary that a
 
 ## Results
 
+![image](https://user-images.githubusercontent.com/67409852/139557648-a66628f2-4484-4748-b027-1e6a19b6b876.png)
+- First, an API call is made to gather weather data
+- Next, the weather data is added to a DataFrame
+
+```weather_data_df = pd.DataFrame("")
+```
+
+- Then, this data is exported as a CSV file
+```weather_data_df.to_csv("")
+```
+
 ## Summary
 
 
 
 
-![image](https://user-images.githubusercontent.com/67409852/139557648-a66628f2-4484-4748-b027-1e6a19b6b876.png)
 
 ![image](https://user-images.githubusercontent.com/67409852/139627528-fb7cfb8d-fea1-40c0-bf3c-e11ca8e8ad75.png)
 
