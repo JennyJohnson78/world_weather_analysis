@@ -1,6 +1,7 @@
 # World Weather Analysis
 
 ## Overview
+APIs, or an Application Programming Interface, is a software intermediary that allows two applications to talk to each other. This technology is used extensively in software and web development, as well as data analytics and data science. APIs can be used to retrieve data from the web. Using the Google Maps Directions API, weather data will be filtered by preferences, which will be used to identify potential travel destinations and nearby hotels. Within this analysis, a travel route between the four cities will be created, as well as a marker layer map.
 
 ## Results
 
