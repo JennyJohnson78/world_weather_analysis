@@ -86,12 +86,68 @@ fig.add_layer(markers)
 
 - Then, use the loc method to create separate DataFrames for 4 cities within the temperature range
 
+```
+# From the map pick 4 cities and create a vacation itinerary route to travel between the four cities. 
+
+vacation_start = vacation_df.loc[vacation_df['City'] == 'Caravelas']
+vacation_end = vacation_df.loc[vacation_df['City'] == 'Caravelas']
+vacation_stop1 = vacation_df.loc[vacation_df['City'] == 'Iguatemi']
+vacation_stop2 = vacation_df.loc[vacation_df['City'] == 'San Rafael'] 
+vacation_stop3 = vacation_df.loc[vacation_df['City'] == 'Rio Grande'] 
+vacation_stop3
+```
+
 - Use Pandas to_numpy function and list indexing to retrieve the latitude-longitude pairs as tuples from each city DataFrame
+
+```
+# Get the latitude-longitude pairs as tuples from each city DataFrame using the to_numpy function and list indexing.
+
+start = vacation_start.iloc[0,4:6].to_numpy()
+end = vacation_end.iloc[0,4:6].to_numpy()
+stop1 = vacation_stop1.iloc[0,4:6].to_numpy()
+stop2 = vacation_stop2.iloc[0,4:6].to_numpy()
+stop3 = vacation_stop3.iloc[0,4:6].to_numpy()
+
+start
+```
 
 - Utilizing gmaps documentation, create a directions layer map using the variables
 
+```
+# Create a direction layer map using the start and end latitude-longitude pairs,
+# and stop1, stop2, and stop3 as the waypoints. The travel_mode should be "DRIVING", "BICYCLING", or "WALKING".
+
+fig = gmaps.figure(center=(38, -122), zoom_level = 7)
+Caravelas = start
+Iguatemi = stop1
+San_Rafael = stop2
+Rio_Grande = stop3 
+roadtrip = gmaps.directions_layer(Caravelas, Caravelas, 
+                                  waypoints=[Iguatemi, San_Rafael, Rio_Grande],
+                                  travel_mode="DRIVING")
+```
+
 - Use the concat() function to combine the 4 city DataFrames
 
+```
+#  Combine the four city DataFrames into one DataFrame using the concat() function.
+
+itinerary_df = pd.concat([vacation_start, vacation_stop1, 
+                          vacation_stop2, vacation_stop3]
+                         ,ignore_index=True)
+itinerary_df
+```
+
 - Finally, refractor map code to create the travel itinerary map
+
+```
+# Add a marker layer for each city to the map.
+fig = gmaps.figure(center=(30.0, 31.0), zoom_level=1.4)
+marker_layer = gmaps.marker_layer(locations, info_box_content=hotel_info)
+fig.add_layer(marker_layer)
+
+# Display the figure
+fig
+```
 
 ![image](https://user-images.githubusercontent.com/67409852/139613419-9245e88e-5172-4457-9991-22b2610b6f7d.png)
