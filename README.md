@@ -35,16 +35,44 @@ city_data_df.to_csv(output_data_file, index_label="City_ID")
 
 - Write two input statements that prompt the user to enter their minimum and maximum temperature criteria for their vacation
 
+```
+# Prompt the user to enter minimum and maximum temperature criteria 
+min_temp = float(input("What is the minimun temperature you would like for your trip? "))
+max_temp = float(input("What is the maximun temperature you would like for your trip? "))
+```
+
 - Next, use the loc method to to filter the DataFrame for that temperature criteria
 
-- Iterate through the hotels DataFrame and retrieve their latitude and longitude and add this to a new DataFrame
+```
+# Filter the city_data_df DataFrame using the input statements to create a new DataFrame using the loc method.
+preferred_cities_df = city_data_df.loc[(city_data_df["Max Temp"] >= min_temp) & (city_data_df["Max Temp"] <= max_temp)]
+preferred_cities_df.head()
+```
+
+- Iterate through the hotels DataFrame using a for loop and retrieve their latitude and longitude and add this to a new DataFrame
 
 - Then, add the city name, the country code, the weather description, and the maximum temperature for the city
 
+```
+# Using the template add city name, the country code, the weather description and maximum temperature for the city.
+info_box_template = """
+<dl>
+<dt>Hotel Name</dt><dd>{Hotel Name}</dd>
+<dt>City</dt><dd>{City}</dd>
+<dt>Country</dt><dd>{Country}</dd>
+<dt>Weather Description</dt>
+<dt>Max Temp</dt><dd>{Max Temp} °F</dd>
+</dl>
+"""
+```
+
 - Refactor the previous marker layer map code to create a marker layer map that will have pop-up markers for each city on the map
 
-
 ```
+# Add a marker layer for each city to the map. 
+fig = gmaps.figure(center=(30.0, 31.0), zoom_level=1.5)
+markers = gmaps.marker_layer(locations, info_box_content=hotel_info)
+fig.add_layer(markers)
 ```
 
 ![image](https://user-images.githubusercontent.com/67409852/139627528-fb7cfb8d-fea1-40c0-bf3c-e11ca8e8ad75.png)
